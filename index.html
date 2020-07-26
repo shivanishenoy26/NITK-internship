@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<style>
+
+span{
+	padding: 10px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+table{
+	border: 1px solid black;
+}
+</style>
+<title>SOLVE</title>
+<link rel="stylesheet" href="scc.css" />	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+<script type="text/javascript" src= "jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src= "scc.js"></script>
+<script type="text/javascript" src= "jquery-2.1.4.js"></script>
+<script type="text/javascript" src= "ej.web.all.js"></script>
+<script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
+
+
+
+<script>
+var values=[26,28,30,32];
+var values1=[28,19,11,6];
+var simsubscreennum=0;
+var temp=0;
+
+function displayCalibrationPicture()
+{
+	document.getElementById('chartContainer').style.visibility="hidden";
+	document.getElementById('calibration').style.visibility="visible";
+}
+
+function displayGraph()
+{
+	document.getElementById('calibration').style.visibility="visible"; 
+	
+	var chart = new CanvasJS.Chart("chartContainer", 
+	{
+		animationEnabled: true,
+		theme: "light2",
+		title:
+		{
+			text: "Graph of Hydrometer readings v/s effective depth"
+		},
+		
+		axisX: 
+		{
+        title: "Hydrometer readings",
+        suffix : " ",
+      minimum:-5,
+      maximum:30,
+      interval:5
+    },
+    axisY: {
+        title: "Effective depth",
+        titleFontColor: "#4F81BC",
+        suffix : " mm",
+        lineColor: "#4F81BC",
+        tickColor: "#4F81BC",
+      minimum:-5,
+      maximum:200
+    },
+
+    data: [{        
+        type: "line",       
+        dataPoints: [
+            {x:-5, y: 191.24 },
+            { x:0,y: 176.2},
+            {x:5, y: 161.24  },
+            { x:10,y: 146.04 },
+            { x:15,y: 132.2 },
+            { x:20,y: 117.74 },
+            { x: 25,y:104.24 },
+            {x:30, y: 90.94}
+        ]
+    }]
+});
+chart.render();
+	document.getElementById('chartContainer').style.visibility="visible";
+}
+
+</script> 
+
+</script>
+</head>
+
+<body style="margin:0">
+<!--Simulation Screen start		-->
+<div id="simscreen">
+
+<!--Title of Simulation		-->
+<div id="title"><h3>Hydrometer</h3></div>
+
+<!--SubScreen Home	-->	
+<div class="simsubscreen" id="canvas0">
+<h4 class="incanvas" style="font-family:verdana; ">Objective</h4>
+<p class="incanvas" style="font-family:verdana; font-size:15px;">To carryout grain size analysis of soil by hydrometer analysis test </p>
+</br>
+<h4 class="incanvas" style="font-family:verdana; ">Apparatus used:</h4>
+<p class="incanvas" style="font-family:verdana; font-size:14px;">Hydrometer, Evaporating dish, Conical flask, Measuring cylinder, Weighing balance etc.</p>
+
+<img id="" style="position: absolute; left: 140px; top: 375px; width:70px; height:180px;" title="Hydrometer" src="Images/msrdev.png"/>
+
+
+<img id="" style="position: absolute; left: 630px; top: 325px; width:30px; height:180px;" title="Hydrometer" src="Images/hydrometer_only.png"/>
+<img id="" style="position: absolute; left: 270px; top: 405px; width:50px; height:80px;" title="Conical flask" src="Images/plate2.png"/>
+<img id="" style="position: absolute; left: 400px; top: 395px; width:150px;" title="Weighing scale" src="Images/ewm.png"/>
+
+<img style="position:absolute; left:07px; top:160px;" title="" src="images/human.png" />
+
+</div>
+
+
+<!--Step1	-->	
+<div class="simsubscreen" id="canvas1" style="visibility:hidden">
+<strong id="titlestep" class="incanvas">STEP </strong>
+<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
+
+<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Take 50 gm of the air dry soil sample.</p>
+
+<img id="ewm1" style="position: absolute; left: 230px; top: 255px;" src="images/ewm1.png"/>
+<img id="mw" style="position: absolute; left: 310px; top: 342px;visibility:hidden" src="images/mw.png"/>
+<img id="hp2-1" style="position: absolute; left:90px; top: 100px;visibility:hidden;" src="images/hp.png"/>
+
+<img id="swc2"  style="position: absolute; visibility: hidden; left: 450px; top: 118px; height: 50px;  width:100px;" src="images/ssc.png"/> 
+<img id="wc" style="position: absolute; left: 325px; top: 215px; width:100px; height: 50px; visibility:hidden" src="images/sc.png"/>
+
+<img id="p2" style="position: absolute; left: 295px; top: 220.25px;width:152px;cursor:move;visibility:hidden" src="images/plate.png"/>
+
+
+<img id="pwc" style="position: absolute; left:350px; top:185px;visibility:hidden" src="images/pc.png"/>
+
+<img id="hand"  style="position: absolute; visibility: hidden; left: 420px; top: 65px;" src="images/pour.png"/> 
+
+<img id="on2-1" style="position: absolute; left:300px; top: 380px; cursor:pointer;" src="images/on.png"/>
+<img id="off2-1" style="position: absolute; left: 330px; top: 380px;" src="images/off.png"/>
+<img id="zero2-1" style="position: absolute; left: 360px; top: 380px;" src="images/zero.png"/>
+<img id="tare2-1" style="position: absolute; left: 390px; top: 380px; cursor:pointer;" src="images/tare2.png"/>
+
+<img id="on2-2" style="position: absolute; left:295px; top: 380px;visibility:hidden" src="images/onblue.png"/>
+<img id="on2-3" style="position: absolute; left:300px; top: 380px;visibility:hidden; cursor:pointer;" src="images/on.png"/>
+<img id="tare2-3" style="position: absolute; left: 390px; top: 380px;visibility:hidden; cursor:pointer;" src="images/tare2.png"/>
+<img id="tare2-2" style="position: absolute; left: 385px; top: 380px;visibility:hidden; cursor:pointer;" src="images/tare3.png"/>
+<p id="v2-1" style="position:absolute;left: 342px; top:334px;visibility:hidden;font-family:verdana; font-size:14px;">00.00   g</p>
+<p id="v2-2" style="position:absolute;left: 326px; top:334px;visibility:hidden;font-family:verdana; font-size:14px;">50.00   g</p>
+</div>
+
+
+<!--Step2-->	
+<div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
+<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
+<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px; ">&nbsp;Treat the soil sample with Hydrogen peroxide to remove the organic matter</p> 
+
+<img id="cylwat" style="position: absolute; left: 338px; top:300.75px; visibility:hidden;" src="images/cylwat.png"/>
+<img id="coverblue" style="position:absolute; left:195px; top:415px;width:80px; visibility:hidden;" src="images/coverblue.png"/>
+<img id="coverblue2" style="position:absolute; left:195px; top:415px; width:80px;visibility:hidden;" src="images/coverblue2.png"/>
+
+<img id="shaker1" style="position:absolute; left:300px; top:273px; visibility:hidden; cursor:pointer;" src="images/shaker1.png"/>
+<img id="shaker2" style="position:absolute; left:240px; top:273px; visibility:hidden;" src="images/shaker2.png"/>
+<img id="cement" style="position: absolute; left: 195px; top: 428.5px; visibility:hidden;" src="images/cement.png"/>
+
+<img id="wc3" style="position: absolute; left: 195px; top: 440px; width:80px;height:20px;visibility:hidden;" src="images/sc.png"/>
+<img id="cement2" style="position: absolute; left: 195px; top: 440px; width:82px; height :20px;visibility:hidden;" src="images/cement2.png"/>
+<img id="p3" style="position: absolute; left: 185px; width: 100px; top: 350.25px;visibility:hidden;" src="images/plate2.png"/>
+
+<img id="water" style="position:absolute; left:382px; top:190px; visibility:hidden;" src="images/water.png"/>
+<img id="water1" style="position:absolute; left:250px; top:377px; visibility:hidden;" src="images/water.png"/>
+
+<img id="msrdev" style="position:absolute; left: 320px; top:190px; visibility:hidden;" src="images/msrdev.png"/>
+<img id="msrdev1" style="position:absolute; left: 370px; top:50px; visibility:hidden; cursor:pointer;" src="images/msrdev1.png"/>
+<img id="msrdev2" style="position:absolute; left:275px; top:210px; visibility:hidden;" src="images/msrdev2.png"/>
+<img id="msrdev3" style="position:absolute; left: 413px; top:158px; visibility:hidden; cursor:pointer;" src="images/84.png"/>
+<img id="msrdev4" style="position:absolute; left: 413px; top:158px; visibility:hidden; cursor:pointer;" src="images/90.png"/>
+<img id="msrdev5" style="position:absolute; left: 413px; top:158px; visibility:hidden; cursor:pointer;" src="images/96.png"/>
+
+<img id="hn" style="position:absolute; left:395px; top:65px; visibility:hidden; cursor:pointer;" src="images/hn.png"/>
+<img id="hn2" style="position:absolute; left:400.5px; top:95px; visibility:hidden;" src="images/hn2.png"/>
+
+</div>
+
+
+<!--Step3-->	
+<div class="simsubscreen" id="canvas3" style="visibility:hidden">
+<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span>
+<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Add 100mL of sodium hexametaphosphate and stir well</p>
+
+<img id="cement1" style="position: absolute; left: 142px; top: 282px; width:80px; height: 20px; visibility:hidden;" src="images/cement.png"/>
+<img id="p4" style="position: absolute; left: 127px; top: 205.25px; width:100px;height: 100px;cursor:pointer; " src="images/plate2.png"/>
+
+
+<img id="tare3-1" style="position: absolute; left: 570px; top: 390px; cursor:pointer;width:10px; hieght:10px; " src="images/s_off.png"/>
+<img id="tare3-3" style="position: absolute; left: 570px; top: 390px;visibility:hidden;width:20px; hieght:20px;cursor:pointer;" src="images/soff.png"/>
+<img id="tare3-2" style="position: absolute; left: 570px; top: 390px;visibility:hidden; width:20px; hieght:20px; cursor:pointer;width:20px; hieght:20px " src="images/soff.png"/>
+
+<img id="shaker" style="position:absolute; left:500px; top:100px; width: 100px; visibility:hidden;" src="images/mixer.png"/>
+<img id="shaker3" style="position:absolute; left: 500px; top: 100px;width:100px;visibility:hidden;" src="images/mixer_without_needle.png"/>
+<img id="shaker4" style="position:absolute; left:545px; top:225px;width:10px; visibility:hidden;" src="images/mixer_only_needle.png"/>
+<img id="on3-1" style="position: absolute; left:530px; top: 390px; cursor:pointer;width:10px; hieght:10px;" src="images/s_on.png"/>
+<img id="on3-2" style="position: absolute; left:530px; top: 390px;visibility:hidden;" src="images/son.png"/>
+<img id="on3-3" style="position: absolute; left:530px; top: 390px;visibility:hidden;cursor:pointer;" src="images/son.png"/>
+
+</div>
+
+<!--Step4	-->	
+<div class="simsubscreen" id="canvas4" style="visibility:hidden;">
+<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
+<p class="steptext" style="font-family:verdana; font-size:14px;" >&nbsp;<sup></sup>The suspension which is made up to 1000 cc is shaked, hydrometer dipped in distilled water is inserted in sample.</p>
+<img id="new" style="position: absolute; left: 340px; top: 200px ;visibility:hidden; width:100px; height: 300px " src="images/new.png"/>
+<img id="step4hn" style="position: absolute; left: 394px; top: 65px; visibility:hidden;" src="images/hn.png"/>
+<img id="step4hn2" style="position: absolute; left: 400px; top: 95px;visibility:hidden; " src="images/hn2.png"/>
+
+<img id="new300" style="position: absolute; left: 340px; top: 200px; visibility:hidden;width:100px; height: 300px" src="images/new300.png"/>
+
+<img id="new600" style="position: absolute; left: 340px; top: 200px; visibility:hidden;width:100px; height: 300px" src="images/new600.png"/>
+<img id="new1000" style="position: absolute; left: 340px; top: 200px; visibility:hidden;width:100px; height: 296px" src="images/new1000.png"/>
+<img id="hnwat" style="position: absolute; left: 194px; top: 270px; visibility:hidden;" src="images/hnwat.png"/>
+<img id="beaker3" style="position: absolute; left: 400px; top: 30px; visibility:hidden;" src="images/beaker3.png"/>
+<img id="beaker4" style="position: absolute; left: 400px; top: 70px; visibility:hidden; " src="images/beaker4.png"/>
+<img id="cement3" style="position:absolute; left:362px;top:450px;visibility:hidden;width:52px; height:30px " src="images/cement.png"/>
+<img id="water3" style="position:absolute; left:363px; top:200px;visibility:hidden; " src="images/water.png"/>
+<img id="pc3" style="position:absolute; left:360px; top:196px;visibility:hidden; " src="images/pc.png"/>
+<img id="hm" style="position:absolute; left:373px; top:250px; visibility:hidden;" src="images/hydrometer_only.png"/>
+<img id="cylwat1" style="position:absolute; left:357px; top:287px;width:50px;height:255px;visibility:hidden; " src="images/cylwat.png"/>
+<img id="stopper"style="position:absolute; left:650px; top:150px;width:80px;height:15px;visibility:hidden; " src="images/stopper.png"/>
+<img id="stopper3"style="position:absolute; left:340px; top:180px;width:100px;height:310px;visibility:hidden; " src="images/stopper3.png"/>
+<img id="newmixed1000" style="position: absolute; left: 340px; top: 200px; visibility:hidden;width:100px; height: 300px" src="images/newmixed1000.png"/>
+<img id="new2"style="position:absolute; left:250px; top:180px;width:250px;height:100px;visibility:hidden; " src="images/new2.png"/>
+<img id="new3"style="position:absolute; left:250px; top:180px;width:250px;height:100px;visibility:hidden; " src="images/new3.png"/>
+<img id="new4"style="position:absolute; left:250px; top:180px;width:250px;height:100px;visibility:hidden; " src="images/new4.png"/>
+
+<img id="stopperhand"style="position:absolute; left:340px; top:180px;width:500px;height:500px;visibility:hidden; " src="images/stopperhand.png"/>
+<img id="hydrometer"style="position:absolute; left:650px; top:150px;width:30px;height:300px;visibility:hidden; " src="images/hydrometer_only.png"/>
+
+<img id="dwater"style="position:absolute; left:550px; top:210px;width:90px;height:295px;visibility:hidden; " src="images/96.png"/>
+<img id="hydrowithdwater"style="position:absolute;left: 550px; top: 150px; visibility:hidden;width:100px; height: 350px " src="images/4.png"/>
+<img id="clock"style="position:absolute; left:50px; top:50px;width:100px;height:100px;visibility:hidden; " src="images/clock.png"/>
+<img id="clockhandle"style="position:absolute; left:96px; top:92px;width:3px;height:25px;visibility:hidden; " src="images/clockhandle.png"/>
+<p id="reading" style="position:absolute;left: 175px; top:75px; visibility:hidden; font-family:verdana; font-size:16px;"> </p>
+<p id="reading1" style="position:absolute;left: 90px; top:270px; visibility:hidden; font-family:verdana; font-size:16px;"> </p>
+<img id="h15"style="position:absolute; left:200px; top:200px;width:100px;height:150px;visibility:hidden; " src="images/h15.png"/>
+<img id="h30"style="position:absolute; left:200px; top:200px;width:100px;height:150px;visibility:hidden; " src="images/h30.png"/>
+<img id="h60"style="position:absolute; left:200px; top:200px;width:100px;height:150px;visibility:hidden; " src="images/h60.png"/>
+<img id="h120"style="position:absolute; left:200px; top:200px;width:100px;height:150px;visibility:hidden; " src="images/h120.png"/>
+<img id="h240"style="position:absolute; left:200px; top:200px;width:100px;height:150px;visibility:hidden; " src="images/h240.png"/>
+<img id="h480"style="position:absolute; left:200px; top:200px;width:100px;height:150px;visibility:hidden; " src="images/h480.png"/>
+<img id="h960"style="position:absolute; left:200px; top:200px;width:100px;height:150px;visibility:hidden; " src="images/h960.png"/>
+<img id="h1920"style="position:absolute; left:200px; top:200px;width:100px;height:150px;visibility:hidden; " src="images/h1920.jpg"/>
+
+ <table id="table" style="margin-top:150px ; margin-left: 50px; visibility: hidden" >    
+ <!-- Table head content -->
+	<thead> 
+		<tr"> 
+			<th>Time</th> 
+			<th>Reading</th>     
+		</tr> 
+    </thead> 
+          
+    <!-- Table body content -->
+    <tbody> 
+        <tr Id ="row15"  style="visibility:hidden" > 
+            <td>15</td> 
+             <td>1.016</td>   
+        </tr> 
+              
+        <tr  Id= "row30"  style="visibility:hidden" > 
+            <td>30</td> 
+            <td>1.015</td>     
+        </tr> 
+        <tr Id ="row60"  style="visibility:hidden"> 
+            <td>60</td> 
+			<td>1.013</td>     
+        </tr> 
+        <tr Id = "row120" style="visibility:hidden"> 
+            <td>120</td> 
+            <td>1.0105</td> 
+                
+        </tr> 
+        <tr Id = "row240" style="visibility:hidden"> 
+            <td>240</td> 
+             <td>1.008</td>    
+        </tr> 
+         <tr Id= "row480" style="visibility:hidden"> 
+            <td>480</td> 
+            <td>1.006</td> 
+		</tr> 
+        <tr Id = "row960" style="visibility:hidden"> 
+            <td>960</td> 
+            <td>1.0045</td> 
+        </tr>  
+        <tr Id = "row1920" style="visibility:hidden "> 
+             <td>1920</td> 
+             <td>1.003</td> 
+        </tr> 
+    </tbody> 
+</table> 
+</div>
+
+<!--Step5	-->	
+<div class="simsubscreen" id="canvas5" style="visibility:hidden">
+<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span>
+<p class="steptext" style="font-family:verdana; font-size:14px;" >&nbsp;<sup></sup>Observation</p>
+<img id="stopper3"style="position:absolute; left:340px; top:180px;width:100px;height:320px;visibility:hidden; " src="images/stopper3.png"/>
+<img id="hydrometer"style="position:absolute; left:340px; top:180px;width:100px;height:320px;visibility:hidden; " src="images/hydrometer_only.png"/>
+<img id="new1000" style="position: absolute; left: 340px; top: 200px; visibility:hidden;width:100px; height: 300px" src="images/new1000.png"/>
+<img id="formula" style="position: absolute; left: 50px; top: 50px; visibility:hidden;width: 450px; height: 450px" src="images/formula.png"/>
+</div>
+
+<div class="simsubscreen" id="canvas6" style="visibility:hidden">
+<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;6&nbsp;</span>
+<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Calibration and Graph</p>
+<img id="calibration" style="position: absolute; left: 50px; top: 50px; visibility:hidden;width: 450px; height: 450px" src="images/caltab.png"/>
+<span id="calibTable" onclick="displayCalibrationPicture()">Click to get the calibration Table</span>
+<span id="displayTable" onclick="displayGraph()">Click to get the graph</span><br><br>
+<div id="chartContainer" style="position: absolute; left: 50px; top: 50px; height: 450px; width: 80%; visibility:hidden"></div>
+<script src="canvasjs.min.js"></script>
+</div>
+
+<div class="simsubscreen" id="canvas7" style="visibility:hidden">
+<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;7&nbsp;</span>
+<p class="steptext1" style="font-family:verdana; font-size:14px;">Calculation</p>
+
+<table >
+<tr>
+	<th>Elapsed time</th>
+	<th>hydrometer reading</th>
+	<th>meniscus corrosion</th>
+	<th>effective depth</th>
+	<th>particle size</th>
+	<th>percentage finer</th>
+</tr>
+<tr>
+	<td id="r10">one</td>
+	<td id="r11">one</td>
+	<td id="r12">one</td>
+	<td id="r13">one</td>
+	<td id="r14"><input type="text" id="ip0"></td>
+	<td id="r15"><input type="text" id="ip1"></td>
+</tr>
+<tr>
+	<td id="r20">one</td>
+	<td id="r21">one</td>
+	<td id="r22">one</td>
+	<td id="r23">one</td>
+	<td id="r24"><input type="text" id="ip2"></td>
+	<td id="r25"><input type="text" id="ip3"></td>
+</tr>
+<tr>
+	<td id="r30">one</td>
+	<td id="r31">one</td>
+	<td id="r32">one</td>
+	<td id="r33">one</td>
+	<td id="r34"><input type="text" id="ip4"></td>
+	<td id="r35"><input type="text" id="ip5"></td>
+</tr>
+<tr>
+	<td id="r40">one</td>
+	<td id="r41">one</td>
+	<td id="r42">one</td>
+	<td id="r43">one</td>
+	<td id="r44"><input type="text" id="ip6"></td>
+	<td id="r45"><input type="text" id="ip7"></td>
+</tr>
+<tr>
+	<td id="r50">one</td>
+	<td id="r51">one</td>
+	<td id="r52">one</td>
+	<td id="r53">one</td>
+	<td id="r54"><input type="text" id="ip8"></td>
+	<td id="r55"><input type="text" id="ip9"></td>
+</tr>
+<tr>
+	<td id="r60">one</td>
+	<td id="r61">one</td>
+	<td id="r62">one</td>
+	<td id="r63">one</td>
+	<td id="r64"><input type="text" id="ip10"></td>
+	<td id="r65"><input type="text" id="ip11"></td>
+</tr>
+<tr>
+	<td id="r70">one</td>
+	<td id="r71">one</td>
+	<td id="r72">one</td>
+	<td id="r73">one</td>
+	<td id="r74"><input type="text" id="ip12"></td>
+	<td id="r75"><input type="text" id="ip13"></td>
+</tr>
+<tr>
+	<td id="r80">one</td>
+	<td id="r81">one</td>
+	<td id="r82">one</td>
+	<td id="r83">one</td>
+	<td id="r84"><input type="text" id="ip14"></td>
+	<td id="r85"><input type="text" id="ip15"></td>
+</tr>
+
+</table>
+<input type="button" onclick="calculateTableValue();" value="Calculate">
+<script>
+
+var mu = 0.0085;
+var g = 2.65;
+var gamma = 9.81;
+var ms=50;
+var dVal = 0;
+var he = 0;
+var t = 0;
+var n = 0;
+ var dataset = [[15,1.016,0.0005,130,0.037,51.39],
+ 				[30,1.015,0.0005,132.2,0.0263,48.18],
+ 				[60,1.013,0.0005,139,0.0191,41.76],
+ 				[120,1.0105,0.0005,146,0.0138,33.76],
+ 				[240,1.008,0.0005,153,0.01,25.69],
+ 				[480,1.006,0.0005,159,0.0072,19.27],
+ 				[960,1.0045,0.0005,163,0.0052,14.45],
+ 				[1920,1.003,0.0005,167.5,0.0038,9.64]];
+ 				tableDraw();
+
+    
+	function displayContent(ele) {
+		 if(ele.id == "calibTable"){
+		 	document.getElementById("container").innerHTML = "Caliberation";
+		 } else if(ele.id == "displayTable"){
+		 	document.getElementById("container").innerHTML = "Graph";
+		 }
+	}
+	function tableDraw(){
+	for(var i=0;i<=7;i++){
+		for(j=0;j<4;j++){
+			console.log("r"+i+j);
+			document.getElementById("r"+(i+1)+j).innerHTML = dataset[i][j];
+		}
+	}
+}
+function calculateTableValue(){
+	particleSize("r13","r10","ip0","ip1","r11");
+	particleSize("r23","r20","ip2","ip3","r21");
+	particleSize("r33","r30","ip4","ip5","r31");
+	particleSize("r43","r40","ip6","ip7","r41");
+	particleSize("r53","r50","ip8","ip9","r51");
+	particleSize("r63","r60","ip10","ip11","r61");
+	particleSize("r73","r70","ip12","ip13","r71");
+	particleSize("r83","r80","ip14","ip15","r81");
+
+
+	// he = document.getElementById("ip0").value;
+	// t = document.getElementById("r10").innerHTML;
+	// d = Math.sqrt(((3000 * mu)/((g-1)*9.81))*(he/t));
+	// t = document.getElementById("r14").innerHTML = d;
+}
+function particleSize(H,T,ip1,ip2,P){
+	console.log(H,T)
+	he = document.getElementById(H).innerHTML;
+	t = document.getElementById(T).innerHTML;
+	rh=document.getElementById(P).innerHTML;
+	d = Math.sqrt(((3000 * mu)/((g-1)*9.81))*(he/t));
+	n = g*rh*100/((g-1)*50)
+	document.getElementById(ip1).value = d;
+	document.getElementById(ip2).value = n;
+
+}
+
+</script>
+</div>
+
+<!--next  Arrow	-->	
+<div id="nav">
+	<img id="nextButton" onclick="navNext(); " src="images/Next.png" />
+</div>
+
+<span id="question-div">
+	 <p id="divq" style="font-family:verdana; font-size:14px;">Both ends of the pipe must be trimmed to ensure parallel faces.</p>
+	 <!-- <input type="button" style="cursor:pointer" value="OK" onclick = "evaluateAnswer();"> -->
+	 <p id="ans"></p>
+</span>
+
+<!--Blinking Arrow	-->	
+<img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
+
+<div id="copyright"> &copy; 2018 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+
+</body>
+</html>

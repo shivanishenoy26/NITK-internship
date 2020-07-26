@@ -1,0 +1,596 @@
+/* #tab{ 
+     padding: 10px; 
+     margin: 8px 0; 
+}	 */
+
+
+input[type=text]:focus {
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align:center;
+    background-color:#D3D3D3
+}
+
+#simscreen
+{
+position: relative;
+left:0px;
+top:0px;
+height: 600px; 
+width:800px;
+border:solid 1px;
+}
+
+#copyright{
+position: absolute;
+left:50px;
+top: 580px;
+font-family: verdana; 
+font-size:12px
+}
+
+#title{
+position:relative;
+left: 0px;
+top: 0px;
+height:40px;
+font-size: 24px;
+text-align:center;
+background-color: black;
+font-family: verdana;
+color: White;
+text-transform: uppercase; 
+}
+
+#title h3{
+padding-top:2px;
+margin:0px;}
+
+#question-div{
+	position: absolute;
+	left:300px;
+	top:350px;
+	width:300px;
+	height:120px;
+	border:solid 1px gray;
+	background-color: gray;
+	filter: alpha(opacity=55);
+	color:white;
+	visibility:hidden;
+}
+#tab
+{
+    
+margin-top:120px;
+margin-left:15px;
+margin-height:100px;
+margin-width:50px;
+width:150px;
+height:100px;
+position:absolute;
+left: 50px;
+top: 100px;
+
+
+}
+.stepfont
+{
+	font-family: verdana;
+	font-size: 14px;
+}
+
+
+.simsubscreen
+{
+position:absolute;
+left: 50px;
+top: 50px;
+height:530px;
+width:745px;
+
+}
+.over-img{
+    
+    position:absolute;
+    top: 80%
+    left: 20%;
+}
+
+.incanvas
+{
+margin:5px 0 0 5px;
+padding:0;
+}
+#nextButton{
+    position: absolute;
+    left: 750px;
+    top: 530px;
+cursor:pointer;
+}
+#nextButton1{
+    position: absolute;
+    left: 750px;
+    top: 530px;
+cursor:pointer;
+}
+
+#prevButton{
+    position: absolute;
+    left: 0px;
+    top: 532px;
+cursor:pointer;
+}
+
+
+.steptext
+{
+display:inline;
+font-size:14px;
+font-family: verdana;
+}
+
+.steptext-6
+{
+display:inline;
+font-family: verdana;
+font-size:14px;
+}
+
+.steptext-2
+{
+	display:inline;
+	font-family: verdana;
+	font-size:14px;
+
+}
+
+.circlebg
+{
+border-radius:100%;
+font-size:25px;
+color:#fff;
+text-align:center;
+background:#000
+}
+
+/* -------------------------------------- water ---------------------------------------- */
+/* Chrome, Safari, Opera */
+@-webkit-keyframes water-4 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, -61px );}
+}
+
+/* Standard syntax */
+@keyframes water-4 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, -61px);}
+}
+
+@-webkit-keyframes water-5 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, -7px );}
+}
+
+/* Standard syntax */
+@keyframes water-5 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, -7px);}
+}
+
+@-webkit-keyframes water-6 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, 2px );}
+}
+
+/* Standard syntax */
+@keyframes water-6 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, 0px);}
+}
+
+@-webkit-keyframes water-7 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, -8px );}
+}
+
+/* Standard syntax */
+@keyframes water-7 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, 0px);}
+}
+
+@-webkit-keyframes water-8 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, 11.5px );}
+}
+
+/* Standard syntax */
+@keyframes water-8 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, 11.5px);}
+}
+
+@-webkit-keyframes water-9.5 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, 18.5px );}
+}
+
+/* Standard syntax */
+@keyframes water-9.5 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, 18.5px);}
+}
+
+@-webkit-keyframes water-9s {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, 25px );}
+}
+
+/* Standard syntax */
+@keyframes water-9s {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, 25px);}
+}
+
+@-webkit-keyframes water-9 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, 38.5px );}
+}
+
+/* Standard syntax */
+@keyframes water-9 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, 38.5px);}
+}
+
+@-webkit-keyframes water-10 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, 67.5px );}
+}
+
+/* Standard syntax */
+@keyframes water-10 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, 67.5px);}
+}
+
+@-webkit-keyframes water-11 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, 92.5px );}
+}
+
+/* Standard syntax */
+@keyframes water-11 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, 92.5px);}
+}
+
+@-webkit-keyframes water-12 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0,109.95px );}
+}
+
+/* Standard syntax */
+@keyframes water-12 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, 109.95px);}
+}
+
+
+/*----------------------- pouring water to cylinder ---------------------------*/
+
+/* Standard syntax */
+@keyframes water-13 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, -72px);}
+}
+
+@-webkit-keyframes water-13 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0,-72px );}
+}
+
+/* Standard syntax */
+@keyframes water-14 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, -84px);}
+}
+
+@-webkit-keyframes water-14 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0,-84px );}
+}
+
+/* Standard syntax */
+@keyframes water-15 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, -98px);}
+}
+
+@-webkit-keyframes water-15 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0,-98px );}
+}
+
+/* -------------------------------------- constant speed arrow ---------------------------------------- */
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes arrow-1 {
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(-50deg);}
+}
+
+/* Standard syntax */
+@keyframes arrow-1 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-50deg);}
+}
+/* -------------------------------------- constant speed arrow 2 ---------------------------------------- */
+/* Chrome, Safari, Opera */
+@-webkit-keyframes arrow-11 {
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(70deg);}
+}
+
+/* Standard syntax */
+@keyframes arrow-11 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(70deg);}
+}
+
+
+/* -------------------------------------- ---------------------------------------- */
+/* Chrome, Safari, Opera */
+@-webkit-keyframes valveturn-2 {
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(-72deg);}
+}
+
+/* Standard syntax */
+@keyframes valveturn-2 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-72deg);}
+}
+
+@-webkit-keyframes valveturn-3 {
+	0% {transform:rotate(0deg);}
+	100% {transform:rotate(20deg);}
+}
+
+@keyframes valveturn-3 {
+	0%{ transform:rotate(0deg);}
+	100%{transform:rotate(20deg);}
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes valveturn-4 {
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(-15deg);}
+}
+
+/* Standard syntax */
+@keyframes valveturn-4 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-15deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes valveturn-5 {
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(-75deg);}
+}
+
+/* Standard syntax */
+@keyframes valveturn-5 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-75deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes valveturn-6 {
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(15deg);}
+}
+
+/* Standard syntax */
+@keyframes valveturn-6 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(15deg);}
+}
+
+
+/* Standard syntax */
+@keyframes water0 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, -100px);}
+}
+
+/* Standard syntax */
+@keyframes water0 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, -100px);}
+}
+
+
+/*-----------------------------------------hook gauge----------------------- */
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myhook-1 {
+0% {-webkit-transform: translate(0, 0 );}
+50% {-webkit-transform: translate(0, -15px );}
+
+100% {-webkit-transform: translate(0, 8px );}
+}
+
+/* Standard syntax */
+@keyframes myhook-1 {
+    0% {transform: translate(0, 0);}
+	50% {transform: translate(0, -15px);}
+	
+	
+    100% {transform: translate(0, 8px);}
+}
+
+@-webkit-keyframes myhook-2 {
+0% {-webkit-transform: translate(0, 0 );}
+50% {-webkit-transform: translate(0, -50px );}
+
+100% {-webkit-transform: translate(0, -15px );}
+}
+
+/* Standard syntax */
+@keyframes myhook-2 {
+    0% {transform: translate(0, 0px);}
+	50% {transform: translate(0, -50px);}
+	100% {transform: translate(0, -15px);}
+}
+
+
+/*-------------------------move shaker----------------------- */
+
+ /* Safari 4.0 - 8.0   */
+@-webkit-keyframes mymove {
+    0%   {left:80px; top:260px;}
+    100%  {left:170px; top: 260px;}
+}
+
+@keyframes mymove {
+    0%   {left:80px; top:260px;}
+    100%  {left:153px; top: 260px;}
+}
+
+/* ---------------pouring cement using shaker ---------------------*/
+ /* Safari 4.0 - 8.0   */
+@-webkit-keyframes mymove2 {
+    from   {left:20px; top:135px;}
+    to  {left: 75px; top: 249px;}
+    }
+
+@keyframes mymove2 {
+   from   {left:20px; top:135px;}
+    to  {left: 75px; top: 249px;}
+     
+}
+
+/* Safari 4.0 - 8.0   */
+@-webkit-keyframes mymove3 {
+    from   {left: 275px; top: 400px;}
+    to  {left:375px; top:300px; width:75px; height:100px;}
+    }
+
+@keyframes mymove3 {
+    from   { left: 127px; top: 205.25px; width:100px;height: 100px;}
+    to  {left:523px; top:290px; width:60px; height:90px;}
+    }
+	
+@keyframes mymovecement{
+	from   {left: 142px; top: 282px; width:80px; height: 20px;}
+    to  {left:523px; top:360px; width:60px; height:20px;}
+    }
+
+
+/* Safari 4.0 - 8.0   */
+@-webkit-keyframes mymove4 {
+    from   {left:50px; top:249px;}
+    to  {left:375px; top:180px;}
+    }
+
+@keyframes mymove4 {
+   from   {left:50px; top:249px;}
+    to  {left:375px; top:180px;}  
+}
+
+
+
+
+@keyframes mymove7 {
+    0%   {left 545px; top:225px;height:150px}
+    100%  {left:549px; top: 225px; height: 150px}
+    }
+
+@keyframes mymove8 {
+    0%   {left:530px; top:385px;height: 10px}
+    100%  {left:300px; top: 200px; height: 20px}
+    }
+
+    @keyframes mymove9 {
+    0%   {left:570px; top:385px;height: 10px}
+    100%  {left:300px; top: 250px; height: 20px}
+    }
+@keyframes mymove9 {
+    0%   {left:570px; top:385px;height: 10px}
+    100%  {left:300px; top: 250px; height: 20px}
+    }
+
+
+    @keyframes mymove10 {
+     0%{ left:650px; top:150px;width:80px;height:15px;}
+    100%{left:355px; top:190px;width:60px;height:15px)}}
+    }
+
+	@keyframes mymove11 {
+    0%{ left:650px; top:150px;width:80px;height:15px;}
+    100%{left:340px; top:180px;width:80px;height:15px)}}
+	
+	@keyframes mymove12 {
+    0%{ left:600px; top:150px;width:30px;height:300px}
+	50% {left:500px; top:50px;width:30px;height:100px}
+    100%{left:370px; top:160px;width:30px; height: 300px;)}}
+	
+	@keyframes mymove13 {
+    0%{ left:370px; top:160px;width:30px; height: 300px;}
+	50% {left:500px; top:50px;width:30px;height:100px}
+    100%{left:600px; top:150px;width:30px;height:300px}}
+	
+	@keyframes mymove14 {
+    0%{ left: 340px; top: 200px; width:75px; height: 90px; }
+    100%{left:200px; top:200px;width:100px;height:150px}}
+
+	
+	@keyframes clocktick15
+	{
+		0%{ transform:rotate(0deg)}
+		100%{ transform:rotate(90deg)}
+	}
+	
+	@keyframes clocktick30
+	{
+		0%{ transform:rotate(90deg)}
+		100%{ transform:rotate(180deg)}
+	}
+	
+	@keyframes clocktick60
+	{
+		0%{ transform:rotate(180deg)}
+		100%{ transform:rotate(360deg)}
+	}
+	@keyframes clocktick120
+	{
+		0%{ transform:rotate(0deg)}
+		100%{ transform:rotate(360deg)}
+	}
+	@keyframes clocktick240
+	{
+		0%{ transform:rotate(0deg)}
+		100%{ transform:rotate(360deg)}
+	}
+	@keyframes clocktick480
+	{
+		0%{ transform:rotate(0deg)}
+		100%{ transform:rotate(360deg)}
+	}
+	@keyframes clocktick960
+	{
+		0%{ transform:rotate(0deg)}
+		100%{ transform:rotate(360deg)}
+	}
+	@keyframes clocktick1920
+	{
+		0%{ transform:rotate(0deg)}
+		100%{ transform:rotate(360deg)}
+	}
+
+
